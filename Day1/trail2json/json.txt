@@ -1,0 +1,3 @@
+terraform can also written in json format and file extension must be ended with .tf.json as extension
+
+for example :  hello.tf.json
