@@ -22,3 +22,23 @@ terraform destroy --target resourcetype.resourcelocalname - It is used to delete
 terraform destroy --target github_repository.secondexample 
 
 terraform validate   - used to check the syntax and configuration of your Terraform files. It performs a static analysis of your configuration files to ensure that they are well-formed and do not contain syntax errors or references to non-existent resources or providers.
+
+terraform refresh      - will query the providers to fetch the current state of your resources and update its state file accordingly(if something was changed in resource then it will be updated in tfstate file)
+
+terraform show       -  The command will display the Terraform state in a readable format, showing details about the resources, their attributes, and their current values.
+
+terraform output  - command is used to retrieve the values of output variables defined in your Terraform configuration. 
+
+
+terraform console   - command allows you to open an interactive console to evaluate expressions and test functions within the context of your Terraform configuration .To go out from this command use "exit"
+
+terraform console ⏎
+>var.username
+sai
+>var.age
+23
+
+terraform fmt   -   command is to automatically format and style your Terraform configuration files
+
+
+
