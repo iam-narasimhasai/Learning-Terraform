@@ -42,3 +42,11 @@ terraform fmt   -   command is to automatically format and style your Terraform 
 
 
 
+terraform plan -out    - command is used to generate an execution plan and save it to a binary file
+terraform plan -out=my-plan.tfplan
+terraform apply my-plan.tfplan
+
+ssh-keygen -t rsa   - command to create rsa shh keys
+
+vault server -dev -dev-listen-address="0.0.0.0:8200"   - to run vault server in dev mode on localhost port 8200
+
