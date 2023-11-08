@@ -9,7 +9,7 @@ terraform providers - shows information about the provider requirements of the c
 
 terraform init - command to initialize a Terraform configuration directory
 
-terraform apply -  command used to apply the changes defined in your Terraform configuration to your infrastructure. 
+terraform apply - command used to apply the changes defined in your Terraform configuration to your infrastructure. 
 
 terraform apply --auto-approve
 
