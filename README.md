@@ -47,6 +47,7 @@ custom var file - terraform plan -var-file=npr.tfvars
 terraform plan -out    - command is used to generate an execution plan and save it to a binary file
 terraform plan -out=my-plan.tfplan
 terraform apply my-plan.tfplan
+https://registry.terraform.io/providers/hashicorp/aws/latest/docs
 
 ssh-keygen -t rsa   - command to create rsa shh keys
 
