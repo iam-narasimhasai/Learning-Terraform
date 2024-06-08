@@ -40,7 +40,9 @@ sai
 
 terraform fmt   -   command is to automatically format and style your Terraform configuration files
 
+terraform.tfvars   - for variables
 
+custom var file - terraform plan -var-file=npr.tfvars
 
 terraform plan -out    - command is used to generate an execution plan and save it to a binary file
 terraform plan -out=my-plan.tfplan
