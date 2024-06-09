@@ -40,6 +40,12 @@ sai
 
 terraform fmt   -   command is to automatically format and style your Terraform configuration files
 
+terraform taint  -  command used to mark a resource as tainted. When a resource is marked as tainted,
+                    Terraform will destroy it and recreate it during the next apply
+					
+terraform taint aws_instance.example_instance
+
+
 terraform.tfvars   - for variables
 
 custom var file - terraform plan -var-file=npr.tfvars
@@ -52,4 +58,5 @@ https://registry.terraform.io/providers/hashicorp/aws/latest/docs
 ssh-keygen -t rsa   - command to create rsa shh keys
 
 vault server -dev -dev-listen-address="0.0.0.0:8200"   - to run vault server in dev mode on localhost port 8200
+
 
