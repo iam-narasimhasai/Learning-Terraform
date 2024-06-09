@@ -3,5 +3,4 @@ provider "aws" {
   access_key = var.akey
   secret_key = var.skey
 
-
 }
