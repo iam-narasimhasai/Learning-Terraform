@@ -6,3 +6,21 @@
 *.tfvars
 id_rsa
 *.pub
+
+/**/*.tfstate*
+/**/.terraform
+
+
+# Local .terraform directories
+**/.terraform/*
+.terraform/*
+*.hcl
+*.lock*
+../.terraform/*
+terraform.*
+*.tfvars*
+
+# .tfstate files
+*.tfstate
+/**/*.tfstate*
+*.tfstate.*
