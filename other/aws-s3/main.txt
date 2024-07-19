@@ -1,0 +1,62 @@
+resource "random_id" "random" {
+  byte_length = 8
+}
+resource "aws_s3_bucket" "website" {
+  bucket = "web-${random_id.random.hex}"
+}
+
+resource "aws_s3_object" "html" {
+  bucket       = aws_s3_bucket.website.bucket
+  source       = "./index.html"
+  key          = "index.html"
+  content_type = "text/html"
+}
+resource "aws_s3_object" "css" {
+  bucket       = aws_s3_bucket.website.bucket
+  source       = "./styles.css"
+  key          = "styles.css"
+  content_type = "text/css"
+}
+resource "aws_s3_bucket_public_access_block" "public_access" {
+  bucket                  = aws_s3_bucket.website.bucket
+  block_public_acls       = false
+  block_public_policy     = false
+  ignore_public_acls      = false
+  restrict_public_buckets = false
+}
+
+resource "aws_s3_bucket_website_configuration" "config" {
+  bucket = aws_s3_bucket.website.id
+  index_document {
+    suffix = "index.html"
+  }
+  depends_on = [aws_s3_bucket.website]
+}
+resource "aws_s3_bucket_policy" "name" {
+  bucket = aws_s3_bucket.website.id
+  policy = jsonencode(
+    {
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "PublicReadGetObject",
+            "Effect": "Allow",
+            "Principal": "*",
+            "Action": [
+                "s3:GetObject",
+                "s3:PutObject"
+            ],
+            "Resource": [
+                "arn:aws:s3:::${aws_s3_bucket.website.id}/*"
+            ]
+        }
+    ]
+}
+  )
+}
+output "aws_s3_bucket" {
+  value = aws_s3_bucket.website.id
+}
+output "aws_s3_url" {
+  value = aws_s3_bucket_website_configuration.config.website_endpoint
+}

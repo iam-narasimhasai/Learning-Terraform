@@ -6,7 +6,8 @@
 *.tfvars
 id_rsa
 *.pub
-
+key1
+key1.pub
 /**/*.tfstate*
 /**/.terraform
 
