@@ -6,4 +6,25 @@ variable "instance_type" {
     error_message = "like only t2.micro or t3.micro"
 
   }
+
+}
+
+variable "root_config" {
+  type = object({
+    volume_size = number
+    volume_type = string
+  })
+
+  default = {
+    volume_size = 8
+    volume_type = "gp2"
+  }
+}
+
+variable "instance_tags" {
+  type = map(string)
+
+  default = {
+    env = "DEV"
+  }
 }
