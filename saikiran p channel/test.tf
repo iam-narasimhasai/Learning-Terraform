@@ -17,11 +17,11 @@ resource "aws_internet_gateway" "igw" {
 }
 
 data "aws_vpc" "vpc1" {
-    
-  filter {
-    name = "tag:Name"
-    values = ["dummy"]
-  }
+    id = "vpc-0a747dc1ed8597383"
+  # filter {
+  #   name = "tag:Name"
+  #   values = ["dummy"]
+  # }
 }
 
 output "name" {
